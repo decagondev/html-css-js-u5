@@ -1,0 +1,1 @@
+console.log("Hello inside the console!");

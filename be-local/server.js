@@ -46,6 +46,11 @@ let smurfs = [
   }
 ];
 
+server.get("/", (req, res) => {
+  res.send("<h1>please use the /smurfs endpoint</h1>")
+});
+
+
 server.get("/smurfs", (req, res) => {
     res.json(smurfs);
   });
