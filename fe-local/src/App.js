@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Route, Switch, withRouter } from 'react-router-dom';
 import axios from 'axios';
 import './App.css';
+import Header from './components/Header';
 import SmurfList from './components/SmurfList';
 import Form from './components/Form';
 class App extends Component {
@@ -30,6 +31,7 @@ class App extends Component {
     const smurfs = this.state.smurfs.slice().reverse();
     return (
       <div className="App">
+        <Header />
         <Route exact path="/" render={ props => <SmurfList smurfs={this.state.smurfs} />} />
 
         <Switch>

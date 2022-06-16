@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 import '../../App.css';
 
@@ -8,13 +9,17 @@ const SmurfList = props => {
       <div className="App">
         {   smurfs.map(smurf => {
             return (
-              <div className="smurf-card" key={Math.random()}>
-                <h1>{ smurf.name }</h1>
-              </div>
+              <Link to={`/smurfs/${smurf.id}`} key={Math.random()}>
+                <div className="smurf-card">{smurf.name}</div>
+              </Link>
             );
           })}
       </div>
     )
 }
+
+SmurfList.defaultProps = {
+  smurfs: [],
+};
 
 export default SmurfList;
